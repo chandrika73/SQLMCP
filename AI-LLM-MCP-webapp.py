@@ -13,10 +13,15 @@ import matplotlib.pyplot as plt
 # -----------------------------
 load_dotenv()
 
-username = quote_plus(os.getenv("DB_USER"))
-password = quote_plus(os.getenv("DB_PASS"))
-server = os.getenv("DB_SERVER")
-database = os.getenv("DB_NAME")
+#username = quote_plus(os.getenv("DB_USER"))
+#password = quote_plus(os.getenv("DB_PASS"))
+#server = os.getenv("DB_SERVER")
+#database = os.getenv("DB_NAME")
+
+username = st.secrets["DB_USER"]
+#password = st.secrets["DB_PASS"]
+#server = st.secrets["DB_SERVER"]
+#database = st.secrets["DB_NAME"]
 
 connection_string = (
     f"mssql+pyodbc://{username}:{password}@{server}/{database}"
@@ -26,12 +31,12 @@ connection_string = (
 engine = create_engine(connection_string)
 
 # -----------------------------
-# LLM
+# LLM api_key=os.getenv("OPENAI_API_KEY")
 # -----------------------------
 llm = ChatOpenAI(
     model="gpt-4o-mini",
     temperature=0,
-    api_key=os.getenv("OPENAI_API_KEY")
+    api_key=st.secrets["OPENAI_API_KEY"]
 )
 
 # -----------------------------
