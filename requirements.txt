@@ -4,3 +4,4 @@ sqlalchemy
 python-dotenv
 langchain-openai
 matplotlib
+pymssql

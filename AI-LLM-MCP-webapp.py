@@ -24,11 +24,11 @@ username = st.secrets["DB_USER"]
 #database = st.secrets["DB_NAME"]
 
 connection_string = (
-    f"mssql+pyodbc://{username}:{password}@{server}/{database}"
-    "?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
+   f"mssql+pymssql://{username}:{password}@{server}/{database}"
+engine = create_engine(connection_string) 
 )
 
-engine = create_engine(connection_string)
+
 
 # -----------------------------
 # LLM api_key=os.getenv("OPENAI_API_KEY")
