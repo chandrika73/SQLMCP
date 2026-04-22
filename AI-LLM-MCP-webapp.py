@@ -25,10 +25,10 @@ username = st.secrets["DB_USER"]
 
 connection_string = (
    f"mssql+pymssql://{username}:{password}@{server}/{database}"
-engine = create_engine(connection_string) 
+
 )
 
-
+engine = create_engine(connection_string) 
 
 # -----------------------------
 # LLM api_key=os.getenv("OPENAI_API_KEY")
