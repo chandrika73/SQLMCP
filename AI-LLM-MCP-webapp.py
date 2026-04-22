@@ -19,9 +19,9 @@ load_dotenv()
 #database = os.getenv("DB_NAME")
 
 username = st.secrets["DB_USER"]
-#password = st.secrets["DB_PASS"]
-#server = st.secrets["DB_SERVER"]
-#database = st.secrets["DB_NAME"]
+password = st.secrets["DB_PASS"]
+server = st.secrets["DB_SERVER"]
+database = st.secrets["DB_NAME"]
 
 connection_string = (
    f"mssql+pymssql://{username}:{password}@{server}/{database}"
