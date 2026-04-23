@@ -59,6 +59,10 @@ def run_query(query):
     except Exception as e:
         return f"Error: {e}"
 
+def clean_sql(query)
+# remove ```sql ``` wrappers
+    query = re.sub(r"```sql|```", "", query, flags=re.IGNORECASE)
+    return query.strip()
 
 # -----------------------------
 # LLM Prompt (UPDATED)
@@ -99,7 +103,8 @@ if st.button("Run Query"):
         {"role": "user", "content": question}
     ])
 
-    sql_query = response.content.strip()
+    #sql_query = response.content.strip()
+    sql_query = clean_sql(response.content)
 
     st.subheader("🧠 Generated SQL")
     st.code(sql_query)
