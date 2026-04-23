@@ -59,7 +59,7 @@ def run_query(query):
     except Exception as e:
         return f"Error: {e}"
 
-def clean_sql(query)
+def clean_sql(query):
 # remove ```sql ``` wrappers
     query = re.sub(r"```sql|```", "", query, flags=re.IGNORECASE)
     return query.strip()
