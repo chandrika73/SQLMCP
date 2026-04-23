@@ -59,7 +59,7 @@ def run_query(query):
     except Exception as e:
         return f"Error: {e}"
 
-def extract_sql(query):
+def extract_sql(raw_text):
 # Remove markdown
     raw_text = re.sub(r"```sql|```", "", raw_text, flags=re.IGNORECASE)
 
