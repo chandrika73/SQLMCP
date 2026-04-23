@@ -63,7 +63,6 @@ def extract_sql(query):
 # Remove markdown
     raw_text = re.sub(r"```sql|```", "", raw_text, flags=re.IGNORECASE)
 
-    # Extract SELECT query
     match = re.search(r"(SELECT[\s\S]+?;)", raw_text, re.IGNORECASE)
 
     if match:
