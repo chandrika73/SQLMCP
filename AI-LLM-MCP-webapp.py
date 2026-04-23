@@ -59,7 +59,7 @@ def run_query(query):
     except Exception as e:
         return f"Error: {e}"
 
-def clean_sql(query):
+def extract_sql(query):
 # Remove markdown
     text = re.sub(r"```sql|```", "", text, flags=re.IGNORECASE)
 
@@ -111,7 +111,7 @@ if st.button("Run Query"):
     ])
 
     #sql_query = response.content.strip()
-    sql_query = clean_sql(response.content)
+    sql_query = extract_sql(response.content)
 
     st.subheader("🧠 Generated SQL")
     st.code(sql_query)
