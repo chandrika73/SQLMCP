@@ -4,4 +4,4 @@ sqlalchemy
 python-dotenv
 langchain-openai
 matplotlib
-pymssql
+psycopg2-binary
