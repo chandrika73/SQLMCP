@@ -6,7 +6,7 @@ from langchain_openai import ChatOpenAI
 import matplotlib.pyplot as plt
 
 # -----------------------------
-# DB Connection (Neon)
+# DB Connection (Neon) Postgres
 # -----------------------------
 engine = create_engine(st.secrets["DATABASE_URL"])
 
