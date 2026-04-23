@@ -60,9 +60,16 @@ def run_query(query):
         return f"Error: {e}"
 
 def clean_sql(query):
-# remove ```sql ``` wrappers
-    query = re.sub(r"```sql|```", "", query, flags=re.IGNORECASE)
-    return query.strip()
+# Remove markdown
+    text = re.sub(r"```sql|```", "", text, flags=re.IGNORECASE)
+
+    # Extract SELECT query
+    match = re.search(r"(SELECT[\s\S]+?;)", text, re.IGNORECASE)
+
+    if match:
+        return match.group(1).strip()
+
+    return text.strip()
 
 # -----------------------------
 # LLM Prompt (UPDATED)
