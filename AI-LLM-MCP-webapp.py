@@ -61,15 +61,15 @@ def run_query(query):
 
 def extract_sql(query):
 # Remove markdown
-    text = re.sub(r"```sql|```", "", text, flags=re.IGNORECASE)
+    raw_text = re.sub(r"```sql|```", "", raw_text, flags=re.IGNORECASE)
 
     # Extract SELECT query
-    match = re.search(r"(SELECT[\s\S]+?;)", text, re.IGNORECASE)
+    match = re.search(r"(SELECT[\s\S]+?;)", raw_text, re.IGNORECASE)
 
     if match:
         return match.group(1).strip()
 
-    return text.strip()
+    return raw_text.strip()
 
 # -----------------------------
 # LLM Prompt (UPDATED)
