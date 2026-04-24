@@ -86,7 +86,7 @@ Rules:
 - Do NOT use SQL Server syntax
 
 Columns:
-ACID, LIMIT_B2KID, BRCA, CUST_ID, ACOD, ACOD_DESC, DTYPE, REFERENCE,
+ACID, LIMIT_B2KID, BRCA, CUST_ID, CUST_NAME, ACOD, ACOD_DESC, DTYPE, REFERENCE,
 gldesc, ValDate, Matdate, RollDate, CCY, AMOUNT, amountsgd, INT_RATE,
 TOTAL_INT, TOTAL_INT_SGD, ACCRUED_INT, ACCRUED_INT_SGD, BaseIntRateType,
 InterestMargin, AmortizedInterest, LinkReference, BANK_NONBANK, CUST_TYPE,
